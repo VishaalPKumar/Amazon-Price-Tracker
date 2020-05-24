@@ -180,6 +180,9 @@ class AmazonAPI:
 
 
 if __name__ == '__main__':
+
+    product_name = input("Enter name of product")
+    NAME = product_name
     am = AmazonAPI(NAME, FILTERS, BASE_URL, CURRENCY)
     data = am.run()
     GenerateReport(NAME, FILTERS, BASE_URL, CURRENCY, data)
