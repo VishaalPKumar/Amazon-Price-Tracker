@@ -11,9 +11,7 @@ from amazon_config import (
     set_browser_as_incognito,
     set_automation_as_head_less,
     DIRECTORY,
-    NAME,
     CURRENCY,
-    FILTERS,
     BASE_URL
 )
 
@@ -183,7 +181,14 @@ if __name__ == '__main__':
 
     product_name = input("Enter name of product")
     NAME = product_name
+    max_price = input("Enter maximum price")
+    min_price = input("Enter minimum price")
+    FILTERS = {
+        'min': min_price,
+        'max': max_price
+    }
+
     am = AmazonAPI(NAME, FILTERS, BASE_URL, CURRENCY)
     data = am.run()
-    GenerateReport(NAME, FILTERS, BASE_URL, CURRENCY, data)
+    GenerateReport("output", FILTERS, BASE_URL, CURRENCY, data)
 

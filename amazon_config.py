@@ -1,13 +1,7 @@
 from selenium import webdriver
 
 DIRECTORY = 'reports'
-NAME = 'Xbox One X'
 CURRENCY = '$'
-MIN_PRICE = "300"
-MAX_PRICE = "500"
-FILTERS = {
-    'min': MIN_PRICE, 'max': MAX_PRICE
-}
 BASE_URL = "https://www.amazon.com/"
 
 def get_chrome_web_driver(options):
